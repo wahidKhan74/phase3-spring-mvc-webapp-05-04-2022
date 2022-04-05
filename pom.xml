@@ -120,6 +120,12 @@
 			<scope>provided</scope>
 		</dependency>
 		
+		<!-- mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.26</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>phase3-spring-mvc-webapp-05-04-2022</finalName>

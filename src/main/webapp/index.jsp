@@ -13,5 +13,8 @@
 	<a href="hello?username=John Smith">Hello User</a>  || 
 	
 	<a href="message?username=John Smith&message=Today is a wonderful day!">Today's Greeting</a>
+
+	<h1>Product Management with Sporing JDBC</h1>
+	<a href="list-products">List Products</a>   ||  
 </body>
 </html>
