@@ -12,6 +12,7 @@
 <style>
 	table, th, td , tr{
 		border: 2px solid red;
+		padding:10px;
 	}
 </style>
 <body>

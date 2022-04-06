@@ -22,7 +22,8 @@ public class ProductDao {
 	
 	// list all products
 	public List<Product> getProducts() {
-		List<Product> productsList = template.query("select * from product_data", new RowMapper<Product>() {
+		String READ_PRODUCT ="select * from product_data";
+		List<Product> productsList = template.query(READ_PRODUCT, new RowMapper<Product>() {
 			// map result set row value to product object
 			public Product mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Product product = new Product();
@@ -37,11 +38,21 @@ public class ProductDao {
 	}
 	
 	// create product
+	public int addProduct(Product product) {
+		String ADD_PRODUCT = "insert into product_data(name, price) values (?, ?)";
+		return template.update(ADD_PRODUCT,product.getName(), product.getPrice());
+	}
+	
 	// update product
+	public int updateProduct(Product product) {
+		String UPDATE_PRODUCT = "UPDATE product_data set name=?, price=? where id=?";
+		return template.update(UPDATE_PRODUCT,product.getName(), product.getPrice(), product.getId());
+	}
+	
 	// delete product
-	
-	
-	
-	
+	public int deleteProduct(Product product) {
+		String DELETE_PRODUCT = "delete from product_data where id=?";
+		return template.update(DELETE_PRODUCT,product.getId());
+	}
 	
 }
